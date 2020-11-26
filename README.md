@@ -2,7 +2,7 @@
 Bot which sends emails with dog pics
 
 Installation:
-    git clone https://github.com/sylvan-c/doggobot
+```git clone https://github.com/sylvan-c/doggobot```
 
 You'll need to set up neomutt with your email address for this to work. I used mutt-wizard (https://github.com/LukeSmithxyz/mutt-wizard) and it worked fine for a gmail account. 
 
