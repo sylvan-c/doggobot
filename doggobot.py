@@ -1,5 +1,6 @@
 import requests
 import shutil
+import sys
 
 url = "https://dog.ceo/api/breeds/image/random/3"
 
@@ -7,7 +8,7 @@ url = "https://dog.ceo/api/breeds/image/random/3"
 
 r = requests.get(url, stream = True)
 urls = r.json()['message']
-user = "" #add your user here
+user = sys.argv[1]
 
 for img in urls:
     filename = "/home/"+user+"/dogs/"+'-'.join(img.split('/')[-2:])
