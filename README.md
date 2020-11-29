@@ -2,7 +2,7 @@
 Bot which sends emails with dog pics
 
 Installation:<br>
-```git clone https://github.com/sylvan-c/doggobot```
+```$ git clone https://github.com/sylvan-c/doggobot```
 
 Usage:<br>
 ```
