@@ -5,9 +5,11 @@ Installation:<br>
 ```git clone https://github.com/sylvan-c/doggobot```
 
 Usage:<br>
-```cd doggobot
-chmod +x doggobot.sh
-./doggobot.sh target@email.com```
+```
+$ cd doggobot
+$ chmod +x doggobot.sh
+$ ./doggobot.sh target@email.com
+```
 
 You'll need to set up neomutt with your email address for this to work. I used mutt-wizard (https://github.com/LukeSmithxyz/mutt-wizard) and it worked fine for a gmail account. 
 
