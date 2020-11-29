@@ -1,28 +1,38 @@
 import requests
+import json
+import random
 import shutil
 import sys
 
-url = "https://dog.ceo/api/breeds/image/random/3"
+r=requests.get("https://reddit.com/r/dogpictures.json", headers = {'User-agent': 'doggobot'})
+#print(r)
+out = r.json()
 
-#print(r.json()['message'])
+urls = []
 
-r = requests.get(url, stream = True)
-urls = r.json()['message']
-user = sys.argv[1]
+while True:
+    url = out['data']['children'][random.choice(range(2, 20))]['data']['url']
+    if "/gallery/" not in url and url not in urls:
+        urls.append(url)
+    if len(urls) == 3:
+        break
+
+print(urls)
 
 for img in urls:
-    filename = "/home/"+user+"/dogs/"+'-'.join(img.split('/')[-2:])
+    user = sys.argv[1]
+    filename = "/home/"+user+"/doggobot/"+img.split('/')[-1]
     r = requests.get(img, stream = True)
 
     ## Check if the media was retrieved successfully
     if r.status_code == 200:
         ## Set decode_content value to True, otherwise the downloaded image file's size will be zero.
         r.raw.decode_content = True
-
+    
         ## Open a local file with wb ( write binary ) permission.
         with open(filename,'wb') as f:
             shutil.copyfileobj(r.raw, f)
-
+        
         print('Successfully downloaded: ',filename)
     else:
         print('Couldn\'t be retrieved')
