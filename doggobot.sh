@@ -5,7 +5,7 @@ while true; do
         python3 /home/$USER/doggobot/doggobot.py $USER;
         dogs=/home/$USER/doggobot/*.jpg;
         neomutt -a $dogs -s "Fresh Doggo Delivery" -- $1 < /home/$USER/doggobot/email.txt && rm $dogs;
-        sleep 6000;
+        sleep 80000;
     fi
     sleep 1200;
 done
