@@ -3,6 +3,10 @@ if [ ! -d /home/$USER/doggobot/pics ]; then
     mkdir /home/$USER/doggobot/pics;
 fi
 
+if [ ! -d /home/$USER/doggobot/pics ]; then
+    mkdir /home/$USER/doggobot/pics;
+fi
+
 while true; do
     if [ `date +%H` == "08" ]; then
         python3 /home/$USER/doggobot/doggobot.py $USER;
