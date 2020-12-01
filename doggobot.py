@@ -21,18 +21,18 @@ print(urls)
 
 for img in urls:
     user = sys.argv[1]
-    filename = "/home/"+user+"/doggobot/"+img.split('/')[-1]
+    filename = "/home/"+user+"/doggobot/pics/"+img.split('/')[-1]
     r = requests.get(img, stream = True)
 
     ## Check if the media was retrieved successfully
     if r.status_code == 200:
         ## Set decode_content value to True, otherwise the downloaded image file's size will be zero.
         r.raw.decode_content = True
-    
+
         ## Open a local file with wb ( write binary ) permission.
         with open(filename,'wb') as f:
             shutil.copyfileobj(r.raw, f)
-        
+
         print('Successfully downloaded: ',filename)
     else:
         print('Couldn\'t be retrieved')
