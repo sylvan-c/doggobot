@@ -21,7 +21,7 @@ print(urls)
 
 for img in urls:
     user = sys.argv[1]
-    filename = "/home/"+user+"/doggobot/"+img.split('/')[-1]
+    filename = "/home/"+user+"/doggobot/pics/"+img.split('/')[-1]
     r = requests.get(img, stream = True)
 
     ## Check if the media was retrieved successfully
